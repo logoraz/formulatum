@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="800mm"
+   height="200mm"
+   viewBox="0 0 800 200"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   sodipodi:docname="formulatum-logo.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     inkscape:clip-to-page="false"
+     showgrid="true"
+     inkscape:zoom="0.48756442"
+     inkscape:cx="1366.9988"
+     inkscape:cy="404.04917"
+     inkscape:window-width="1644"
+     inkscape:window-height="1027"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <inkscape:grid
+       id="grid1"
+       units="mm"
+       originx="0"
+       originy="0"
+       spacingx="0.99999999"
+       spacingy="0.99999999"
+       empcolor="#0099e5"
+       empopacity="0.30196078"
+       color="#0099e5"
+       opacity="0.14901961"
+       empspacing="5"
+       enabled="true"
+       visible="true" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1">
+    <rect
+       x="2861.1604"
+       y="582.48713"
+       width="6.1530331"
+       height="20.51011"
+       id="rect5" />
+    <rect
+       x="2619.1411"
+       y="61.530331"
+       width="43.071231"
+       height="65.632353"
+       id="rect2" />
+    <rect
+       x="632.32373"
+       y="316.16187"
+       width="1134.1219"
+       height="440.88629"
+       id="rect1" />
+    <rect
+       x="632.32373"
+       y="316.16187"
+       width="1134.1219"
+       height="440.88629"
+       id="rect1-7" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       transform="matrix(10.048266,0,0,10.120639,-6340.4053,-3165.3052)"
+       id="text1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect1);display:inline;fill:#0a81b5;fill-opacity:1"><tspan
+         x="632.32422"
+         y="327.08061"
+         id="tspan7"><tspan
+           style="font-family:Hack;-inkscape-font-specification:Hack"
+           id="tspan2">F rmu</tspan><tspan
+           style="fill:#496976"
+           id="tspan3">λ</tspan><tspan
+           style="font-family:Hack;-inkscape-font-specification:Hack"
+           id="tspan6">atum</tspan></tspan></text>
+    <circle
+       style="fill:#000000;fill-opacity:0;stroke:#496976;stroke-width:3.8896;stroke-dasharray:11.6688, 3.8896;stroke-dashoffset:0;stroke-opacity:1"
+       id="path2"
+       cx="125.57384"
+       cy="109.25326"
+       r="22.789766" />
+    <path
+       sodipodi:type="star"
+       style="fill:#000000;fill-opacity:0;stroke:#496976;stroke-width:10.5833;stroke-dasharray:none;stroke-opacity:1"
+       id="path4"
+       inkscape:flatsided="true"
+       sodipodi:sides="6"
+       sodipodi:cx="164.23256"
+       sodipodi:cy="-56.790699"
+       sodipodi:r1="46.333408"
+       sodipodi:r2="40.125908"
+       sodipodi:arg1="0.52359878"
+       sodipodi:arg2="1.0471976"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m 204.35847,-33.623995 -40.12591,23.166704 -40.12591,-23.166704 0,-46.333408 40.12591,-23.166707 40.12591,23.166707 z"
+       transform="matrix(0.8148011,0,0,0.8148011,-8.443958,155.08167)" />
+    <text
+       xml:space="preserve"
+       transform="scale(0.26458333)"
+       id="text2"
+       style="fill:#000000;text-orientation:auto;-inkscape-font-specification:Hack;font-family:Hack;text-align:start;writing-mode:lr-tb;direction:ltr;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;white-space:pre;shape-inside:url(#rect2)" />
+    <text
+       xml:space="preserve"
+       transform="scale(0.26458333)"
+       id="text5"
+       style="fill:#367089;text-orientation:auto;-inkscape-font-specification:Hack;font-family:Hack;text-align:start;writing-mode:lr-tb;direction:ltr;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;fill-opacity:1;stroke:#0a81b5;stroke-opacity:1;white-space:pre;shape-inside:url(#rect5)" />
+  </g>
+</svg>
