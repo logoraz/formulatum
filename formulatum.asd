@@ -1,33 +1,33 @@
 (defsystem "formulatum"
-  :description "Formulation Chemist Software Solution"
+  :description "Formulation Chemistry Software Solution"
   :author "Erik P Almaraz <erikalmaraz@fastmail.com>"
   :license "Apache-2.0"
   :version (:read-file-form "version.sexp" :at (0 1))
   :class :package-inferred-system
+  ;; :defsystem-depends-on ("frml-asdf-system")
   :depends-on ("bordeaux-threads"
                "lparallel"
                "closer-mop"
                "formulatum/core/all")
-  :in-order-to ((test-op (test-op "formulatum/test")))
+  :in-order-to ((test-op (test-op "formulatum/tests")))
   :long-description "
-A chemical formula builder/editor tool with regulatory intelligence.")
+An extensible chemical formula builder/editor with regulatory intelligence.")
 
 
-(defsystem "formulatum/test"
-  :depends-on ("fiveam"
-               "formulatum/tests/all")
-  :perform (test-op (op c)
-                    (symbol-call :fiveam :run!
-                                 (find-symbol* :root-suite :formulatum/test))))
+(defsystem "formulatum/tests"
+  :class :package-inferred-system
+  :depends-on ("rove"
+               "formulatum/tests/base")
+  :perform (test-op (o c)
+                    (unless (symbol-call :rove :run c)
+                      (error "Tests failed"))))
 
 (defsystem "formulatum/docs"
+  :class :package-inferred-system
   :depends-on ())
 
-
-(asdf:register-system-packages "formulatum/tests/all" '(:formulatum/test))
 
 (register-system-packages "bordeaux-threads" '(:bt :bt2 :bordeaux-threads-2))
 
 (register-system-packages "closer-mop" '(:c2mop :c2cl :c2cl-user))
 
-(register-system-packages "fiveam" '(:5am))
