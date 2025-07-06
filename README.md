@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <img src="assets/cl-yin-yang-logo_512.png" width="200" />
+  <img src="assets/formulatum-icon.svg" width="250" />
 </p>
 
 
