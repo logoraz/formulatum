@@ -6,7 +6,12 @@
   (:import-from :osicat
                 #:make-link
                 #:file-kind)
-  (:export #:*shell-program*
+  (:import-from :micros
+                :create-server
+                :stop-server)
+  (:export #:start-micros
+           #:stop-micros
+           #:*shell-program*
            #:concat
            #:dir-pathname
            #:ensure-dir
@@ -14,6 +19,26 @@
            #:create-symlink)
   (:documentation "Base utilities."))
 (in-package :formulatum/core/utils/base)
+
+;; TCP server
+;; Only works in Lem with sbcl (ccl hangs)
+(defvar *micros-port* 4005
+  "Default Micros server port for Formulatum.")
+
+(defun start-micros (&optional (micros-port *micros-port*))
+  "Start a Micros server."
+  (create-server :port micros-port :dont-close t)
+  #+or
+  (bt2:make-thread
+   (lambda ()
+     (create-server :port micros-port :dont-close t)))
+  (format nil "Micros server started at port ~A" micros-port))
+
+(defun stop-micros (&optional (micros-port *micros-port*))
+  "Stop current Micros server."
+  (stop-server micros-port)
+  (format nil "Closing Micros server at port ~A" micros-port))
+
 
 ;; String manipulation
 (defun concat (&rest strings)

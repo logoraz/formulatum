@@ -37,7 +37,7 @@ Bank CL (sbcl).
 ## Setup
 
 To setup this project you will first need the following system dependencies:
- - [Clozure CL](https://github.com/Clozure/ccl) and sbcl
+ - [Clozure CL](https://github.com/Clozure/ccl) and [sbcl](https://github.com/sbcl/sbcl)
  - [ocicl](https://github.com/ocicl/ocicl)
 
 
@@ -130,7 +130,7 @@ $ cd /path/to/formulatum/
 $ ccl  # or sbcl
 ```
 
-And load the `:formulatum` (or alias `:frml`) system and viala, `ocicl` will
+And load the `:formulatum` (or alias `:frml`) system and voila, `ocicl` will
 pull all required CL systems that `:formulatum` depends on.
 
 ```lisp

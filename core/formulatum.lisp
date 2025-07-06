@@ -2,7 +2,9 @@
   (:use :cl
         :formulatum/core/utils/base)
   (:export #:simple-test
-           #:test-utils)
+           #:test-utils
+           #:start-micros
+           #:stop-micros)
   (:documentation "Main package of formulatum"))
 (in-package :formulatum/core/formulatum)
 
@@ -15,3 +17,4 @@
 
 (defun test-utils ()
   (concat "string-1" " " "string-2"))
+
