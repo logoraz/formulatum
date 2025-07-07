@@ -1,7 +1,10 @@
 (defpackage :formulatum/core/utils/base
   (:use :cl :uiop)
+  #+or
   (:import-from :cl-interpol)
+  #+or
   (:import-from :cl-ppcre)
+  #+or
   (:import-from :local-time)
   (:import-from :osicat
                 #:make-link
@@ -20,31 +23,18 @@
   (:documentation "Base utilities."))
 (in-package :formulatum/core/utils/base)
 
-;; TCP server
-;; Only works in Lem with sbcl (ccl hangs)
-(defvar *micros-port* 4005
-  "Default Micros server port for Formulatum.")
-
-(defun start-micros (&optional (micros-port *micros-port*))
-  "Start a Micros server."
-  (create-server :port micros-port :dont-close t)
-  #+or
-  (bt2:make-thread
-   (lambda ()
-     (create-server :port micros-port :dont-close t)))
-  (format nil "Micros server started at port ~A" micros-port))
-
-(defun stop-micros (&optional (micros-port *micros-port*))
-  "Stop current Micros server."
-  (stop-server micros-port)
-  (format nil "Closing Micros server at port ~A" micros-port))
-
 
 ;; String manipulation
 (defun concat (&rest strings)
   "Shorthand for CONCATENATE specialized for strings."
   (apply #'concatenate 'string strings))
 
+
+(defun executable-find (program)
+  "Simple function to return path to PROGRAM"
+  (remove #\newline 
+          (uiop:run-program (list "which" program)
+                            :output :string)))
 
 ;; Environment
 
@@ -79,6 +69,7 @@
 (defvar *shell-program* "/bin/sh"
   "The shell program used by @code{run-shell-command}.")
 
+
 ;;; source: stumpwm/wrappers.lisp
 ;; implementation specific --> sbcl
 #+ (or)
@@ -95,3 +86,25 @@
   "run a command and read its output."
   (with-output-to-string (s)
     (run-prog prog :args args :output s :wait t)))
+
+
+;; TCP server
+;; Only works in Lem with sbcl (ccl hangs)
+(defvar *micros-port* 4005
+  "Default Micros server port for Formulatum.")
+
+(defun start-micros (&optional (micros-port *micros-port*))
+  "Start a Micros server."
+  (create-server :port micros-port :dont-close t)
+  #+or
+  (bt2:make-thread
+   (lambda ()
+     (create-server :port micros-port :dont-close t)))
+  (format nil "Micros server started at port ~A" micros-port))
+
+(defun stop-micros (&optional (micros-port *micros-port*))
+  "Stop current Micros server."
+  (stop-server micros-port)
+  (format nil "Closing Micros server at port ~A" micros-port))
+
+

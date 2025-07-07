@@ -10,6 +10,9 @@
                "closer-mop"
                "formulatum/core/all")
   :in-order-to ((test-op (test-op "formulatum/tests")))
+  ;; :build-operation "program-op"
+  ;; :build-pathname "formulatum"
+  ;; :entry-point "formulatum:main"
   :long-description "
 An extensible chemical formula builder/editor with regulatory intelligence.")
 
@@ -17,14 +20,17 @@ An extensible chemical formula builder/editor with regulatory intelligence.")
 (defsystem "formulatum/tests"
   :class :package-inferred-system
   :depends-on ("rove"
-               "formulatum/tests/base")
+               "formulatum/tests/base"
+               "formulatum/tests/utils")
   :perform (test-op (o c)
                     (unless (symbol-call :rove :run c)
                       (error "Tests failed"))))
 
+
 (defsystem "formulatum/docs"
   :class :package-inferred-system
-  :depends-on ())
+  :depends-on ("40ants-doc"
+               "formulatum/docs/index"))
 
 
 (register-system-packages "bordeaux-threads" '(:bt :bt2 :bordeaux-threads-2))
