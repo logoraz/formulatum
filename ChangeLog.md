@@ -1,6 +1,7 @@
 # ChangeLog
 
 ## 0.0.4 (Not Released)
+ - [X] Establish ASDF build to executable
  - [ ] Create a base ASDF system class `frml-asdf-pis-system`?
  - [ ] Build out testing framework
  - [ ] Build out documentation framework

@@ -1,7 +1,8 @@
 (defpackage :formulatum/core/formulatum
   (:use :cl
         :formulatum/core/utils/base)
-  (:export #:simple-test
+  (:export #:main
+           #:simple-test
            #:test-utils
            #:start-micros
            #:stop-micros)
@@ -18,3 +19,6 @@
 (defun test-utils ()
   (concat "string-1" " " "string-2"))
 
+(defun main ()
+  "Main entry point for the executable."
+  (format t "Hello from Common Lisp! Arguments: ~A~%" 'no-args))

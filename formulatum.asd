@@ -10,9 +10,11 @@
                "closer-mop"
                "formulatum/core/all")
   :in-order-to ((test-op (test-op "formulatum/tests")))
-  ;; :build-operation "program-op"
-  ;; :build-pathname "formulatum"
-  ;; :entry-point "formulatum:main"
+  ;; Simply build with ccl/sbcl via (asdf:make :formulatum)
+  ;; (ccl:save-application #p"formulatum-ccl" :toplevel #'formulatum:main :prepend-kernel t)
+  :build-operation "program-op"
+  :build-pathname "formulatum-preexe"
+  :entry-point "formulatum:main"
   :long-description "
 An extensible chemical formula builder/editor with regulatory intelligence.")
 
@@ -36,4 +38,3 @@ An extensible chemical formula builder/editor with regulatory intelligence.")
 (register-system-packages "bordeaux-threads" '(:bt :bt2 :bordeaux-threads-2))
 
 (register-system-packages "closer-mop" '(:c2mop :c2cl :c2cl-user))
-
