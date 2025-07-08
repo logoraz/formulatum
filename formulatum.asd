@@ -4,7 +4,6 @@
   :license "Apache-2.0"
   :version (:read-file-form "version.sexp" :at (0 1))
   :class :package-inferred-system
-  ;; :defsystem-depends-on ("frml-asdf-system")
   :depends-on ("bordeaux-threads"
                "lparallel"
                "closer-mop"
@@ -31,8 +30,7 @@ An extensible chemical formula builder/editor with regulatory intelligence.")
 
 (defsystem "formulatum/docs"
   :class :package-inferred-system
-  :depends-on ("40ants-doc"
-               "formulatum/docs/index"))
+  :depends-on ())
 
 
 (register-system-packages "bordeaux-threads" '(:bt :bt2 :bordeaux-threads-2))
