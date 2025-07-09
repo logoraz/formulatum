@@ -3,7 +3,7 @@
 ## 0.0.5 (Not Released)
  - [ ] Begin work on database system
  - [ ] Build out Formulatum core framework
- - [ ] Begin investigation of Raylib as a frontend
+ - [ ] Begin investigation an appropriate frontend library
 
 ## 0.0.4
  - [X] Establish ASDF build to executable

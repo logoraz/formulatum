@@ -18,4 +18,11 @@
 
 (defun main ()
   "Main entry point for the executable."
-  (format t "Hello from Common Lisp! Arguments: ~A~%" 'no-args))
+  (format t "Hello from Common Lisp! Arguments: ~A~%" 'no-args)
+  #+or
+  (progn
+    #+clisp (ext:exit)
+    #+(and ecl clasp) (ext:quit)
+    #+ccl (ccl:quit)
+    #+sbcl (sb-ext:quit))
+  (uiop:quit))

@@ -121,7 +121,7 @@ Then set up the `ocicl` world by adding the following to your `.ccl-init.lisp`
 ```
 
 
-### Build & Test:
+### Build, Test, and Make:
 
 Start the lisp repl
 
@@ -134,14 +134,24 @@ And load the `:formulatum` (or alias `:frml`) system and voila, `ocicl` will
 pull all required CL systems that `:formulatum` depends on.
 
 ```lisp
-
-? (asdf:load-system :formulatum)
+? (asdf:load-system :frml) ; system short alias
 ;; or
-;; (asdf:load-system :frml) ; system short alias
+;; (asdf:load-system :formulatum)
 ;;...
 
-? (asdf:test-system :formulatum)
+? (asdf:test-system :frml)
+;; or
+;; (asdf:test-system :formulatum)
+;;...
+```
 
+And to create an executable of the `:formulatum` (aka `:frml`) system:
+
+```lisp
+? (asdf:make :frml)
+;; or
+;; (asdf:test-system :formulatum)
+;;...
 ```
 
 Note: You can always view explicitly all the system installed by ocicl via
@@ -151,7 +161,8 @@ Note: You can always view explicitly all the system installed by ocicl via
 ### Play & Learn
 
 Planning to connect to lem, using micros, so that I can tweak and play with
-the lisp image in realtime...
+the lisp image in realtime... Goes w/o saying, but adding slynk to connect
+to good, old faithful Emacs...
 
 
 ## TODO Roadmap
@@ -161,9 +172,8 @@ the lisp image in realtime...
  - [ ] Formula database
  - [ ] Regulatory database
  - [ ] Formula Editor/Builder Tool
- - [ ] Inital UI/X API using raylib
-   - [raylib](https://github.com/raysan5/raylib)
-   - [claw-raylib](https://github.com/bohonghuang/claw-raylib)
+ - [ ] Inital UI/X API development trial gtk4
+   - [cl-cffi-gtk4 Bindings](https://github.com/crategus/cl-cffi-gtk4)
 
 
 ## References:
