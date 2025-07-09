@@ -12,6 +12,7 @@ cffi-toolchain, ghcr.io/ocicl/cffi-grovel@sha256:d09a2f111ee66ba21e79201564809f5
 cffi-uffi-compat, ghcr.io/ocicl/cffi-grovel@sha256:d09a2f111ee66ba21e79201564809f5a56ba56d2ce3873a494ec75d3cb6adab9, cffi-20250311-48eaef6/cffi-uffi-compat.asd
 cl-ppcre, ghcr.io/ocicl/cl-ppcre@sha256:bf073924cf4fd5957a4fd961a95d446ed0e53fa32a5002cbd2d52182874f45e5, cl-ppcre-20250606-a2ea581/cl-ppcre.asd
 cl-ppcre-unicode, ghcr.io/ocicl/cl-ppcre@sha256:bf073924cf4fd5957a4fd961a95d446ed0e53fa32a5002cbd2d52182874f45e5, cl-ppcre-20250606-a2ea581/cl-ppcre-unicode.asd
+closer-mop, ghcr.io/ocicl/closer-mop@sha256:e3ab432b86a1e95997f6b6f69bb42954da341506728344d657a8e4a2f42e7745, closer-mop-20250701-5f8adff/closer-mop.asd
 dissect, ghcr.io/ocicl/dissect@sha256:f39bc231c73d8fa78935c25de4cd0b1ccca6e97f136c430a8bfa2272987abb18, dissect-20240503-a70cabc/dissect.asd
 global-vars, ghcr.io/ocicl/global-vars@sha256:d197e871c9c9abc4bf31b1186f5fd28f0ca848ebe2e9dddf2d82ecee01dbdc65, global-vars-20240503-c749f32/global-vars.asd
 global-vars-test, ghcr.io/ocicl/global-vars@sha256:d197e871c9c9abc4bf31b1186f5fd28f0ca848ebe2e9dddf2d82ecee01dbdc65, global-vars-20240503-c749f32/global-vars-test.asd

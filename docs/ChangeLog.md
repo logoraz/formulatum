@@ -1,10 +1,15 @@
 # ChangeLog
 
-## 0.0.4 (Not Released)
+## 0.0.5 (Not Released)
+ - [ ] Begin work on database system
+ - [ ] Build out Formulatum core framework
+ - [ ] Begin investigation of Raylib as a frontend
+
+## 0.0.4
  - [X] Establish ASDF build to executable
- - [X] Reconsider/Remove documentation framework
- - [ ] Build out testing framework
- - [ ] Refactor/Build out utilities framework
+ - [X] Remove & rethink documentation framework
+ - [X] Build out testing framework
+ - [X] Refactor/Build out utilities framework
 
 ## 0.0.3
  - [X] Add integration with Lem/Micros (to play)

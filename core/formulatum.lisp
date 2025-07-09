@@ -1,11 +1,8 @@
 (defpackage :formulatum/core/formulatum
-  (:use :cl
-        :formulatum/core/utils/base)
+  (:use :cl)
   (:export #:main
            #:simple-test
-           #:test-utils
-           #:start-micros
-           #:stop-micros)
+           #:test-utils)
   (:documentation "Main package of formulatum"))
 (in-package :formulatum/core/formulatum)
 

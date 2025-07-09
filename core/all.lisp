@@ -2,7 +2,7 @@
   (:nicknames :formulatum :frml)
   (:use :cl)
   (:use-reexport
-   #:formulatum/core/utils/base
+   #:formulatum/core/utils/all
    #:formulatum/core/database
    #:formulatum/core/formulatum)
   (:documentation "Core interface of Formulatum"))
