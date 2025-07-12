@@ -9,7 +9,10 @@
                "mito"
                "osicat"
                "micros"
-               "cl-cffi-gtk4")
+               #+sbcl
+               "cl-cffi-gtk4"
+               ;; Libraries/Local Systems
+               )
   ;; Map of System Hierarchy
   :serial t
   :components
@@ -35,7 +38,7 @@
    (:module "frontends"
     :serial t
     :components
-    ((:file "gtk4-tutorial"))))
+    (#+sbcl (:file "gtk4-tutorial"))))
 
   :in-order-to ((test-op (test-op "formulatum/tests")))
   ;; Simply build with ccl/sbcl via (asdf:make :formulatum)
