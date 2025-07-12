@@ -1,10 +1,12 @@
-(defpackage :formulatum/core/formulatum
-  (:use :cl)
+(defpackage :formulatum
+  (:nicknames :frml)
+  (:use :cl
+   :utils/strings)
   (:export #:main
            #:simple-test
            #:test-utils)
   (:documentation "Main package of formulatum"))
-(in-package :formulatum/core/formulatum)
+(in-package :formulatum)
 
 
 (defun simple-test (&optional (n 11))

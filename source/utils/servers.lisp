@@ -1,4 +1,4 @@
-(defpackage :formulatum/core/utils/servers
+(defpackage :utils/servers
   (:use :cl :uiop)
   (:import-from :micros
                 :create-server
@@ -7,7 +7,7 @@
            #:start-micros
            #:stop-micros)
   (:documentation "TCP Lisp Servers"))
-(in-package :formulatum/core/utils/servers)
+(in-package :utils/servers)
 
 ;; TCP servers
 

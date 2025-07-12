@@ -1,10 +1,11 @@
-(defpackage :formulatum/tests/utils
+(defpackage :tests/utils
   (:use :cl
         :rove
-        :formulatum/core/utils/all)
+        :utils/strings
+        :utils/shell)
   (:export )
   (:documentation "Test suite for utils"))
-(in-package :formulatum/tests/utils)
+(in-package :tests/utils)
 
 ;; Let's first define the "easy" tests
 (deftest concat-test

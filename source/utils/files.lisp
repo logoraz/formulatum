@@ -1,4 +1,4 @@
-(defpackage :formulatum/core/utils/files
+(defpackage :utils/files
   (:use :cl :uiop)
   (:import-from :osicat
                 #:make-link
@@ -7,7 +7,8 @@
            #:symlinkp
            #:create-symlink)
   (:documentation "I/O and File conveniencies"))
-(in-package :formulatum/core/utils/files)
+
+(in-package :utils/files)
 
 ;;; Ref: https://lispcookbook.github.io/cl-cookbook/files.html
 

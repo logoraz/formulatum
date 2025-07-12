@@ -1,9 +1,10 @@
-(defpackage :formulatum/core/utils/shell
+(defpackage :utils/shell
   (:use :cl :uiop)
   (:export #:executable-find
            #:*shell-program*)
   (:documentation "Shell utilities."))
-(in-package :formulatum/core/utils/shell)
+
+(in-package :utils/shell)
 
 (defun executable-find (program)
   "Simple function to return path to PROGRAM"

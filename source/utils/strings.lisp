@@ -1,4 +1,4 @@
-(defpackage :formulatum/core/utils/strings
+(defpackage :utils/strings
   (:use :cl :uiop)
   #+or
   (:import-from :cl-interpol)
@@ -8,7 +8,7 @@
   (:import-from :local-time)
   (:export #:concat)
   (:documentation "String utilities."))
-(in-package :formulatum/core/utils/strings)
+(in-package :utils/strings)
 
 ;; String manipulation
 (defun concat (&rest strings)

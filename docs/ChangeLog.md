@@ -1,6 +1,7 @@
 # ChangeLog
 
 ## 0.0.5 (Not Released)
+ - [X] Refactor ASDF system scaffold
  - [ ] Begin work on database system
  - [ ] Build out Formulatum core framework
  - [ ] Begin investigation an appropriate frontend library

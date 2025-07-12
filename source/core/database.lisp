@@ -1,8 +1,9 @@
-(defpackage :formulatum/core/database
+(defpackage :core/database
   (:use :cl)
   (:import-from :mito)
   (:export )
   (:documentation "Core database framework"))
-(in-package :formulatum/core/database)
+
+(in-package :core/database)
 
 ;; https://gigamonkeys.com/book/practical-an-mp3-database
