@@ -30,8 +30,12 @@ This program will comprise of the following modules:
 
 ## Setup, Build & Test
 
-This project will be developed on Clozure CL (ccl) and distributed under Steel 
-Bank CL (sbcl).
+This project will be primarily developed on Steel Bank Common Lisp (sbcl) and
+Clozure CL (ccl). Plan to port/test with Clasp as that implementation is ideal
+for the future of this application, but is currently not in an ideal state for \
+such an endeavor.
+
+Currently the UI system does not build successfully on Clozure CL..
 
 
 ## Setup
@@ -111,13 +115,18 @@ Then set up the `ocicl` world by adding the following to your `.ccl-init.lisp`
 ;; or overriding it completely on the command line
 ;; (eg. sbcl --userinit init.lisp)
 
+;; Note: To add other systems not registered in ocicl, simply use the
+;; :tree keyword (as opposed to the default :directory) as follows. Also,
+;; I wrap this initializing with `ignore-errors` so that the CL implementation
+;; fails quietly...
+
 #-ocicl
 (ignore-errors
   (when (probe-file (uiop:xdg-data-home #P"ocicl/ocicl-runtime.lisp"))
     (load (uiop:xdg-data-home #P"ocicl/ocicl-runtime.lisp")))
   (asdf:initialize-source-registry
    (list :source-registry
-         (list :directory (uiop:getcwd)) :inherit-configuration)))
+         (list :tree (uiop:getcwd)) :inherit-configuration)))
 ```
 
 

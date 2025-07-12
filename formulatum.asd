@@ -9,15 +9,15 @@
                "mito"
                "osicat"
                "micros"
-               "cl-cffi-gtk4")
+               #+sbcl
+               "cl-cffi-gtk4"
+               ;; Local Systems (aka libraries)
+               )
   ;; Map of System Hierarchy
-  :serial t
   :components
   ((:module "source"
-    :serial t
     :components
     ((:module "utils"
-      :serial t
       :components
       ((:file "files")
        (:file "servers")
@@ -25,7 +25,7 @@
        (:file "strings")))
 
      (:module "core"
-      :serial t
+      :depends-on ("utils")
       :components
       ((:file "database")))
 
@@ -33,38 +33,35 @@
      (:file "formulatum" :depends-on ("utils" "core"))))
 
    (:module "frontends"
-    :serial t
     :components
-    ((:file "gtk4-tutorial"))))
+    (#+sbcl (:file "gtk4-tutorial"))))
 
-  :in-order-to ((test-op (test-op "formulatum/tests")))
-  ;; Simply build with ccl/sbcl via (asdf:make :formulatum)
-  ;; (ccl:save-application #p"formulatum-ccl" :toplevel #'formulatum:main :prepend-kernel t)
+  ;; Building (executables) & Testing
   :build-operation "program-op"
   :build-pathname "formulatum-preexe"
   :entry-point "formulatum:main"
+  :in-order-to ((test-op (test-op "formulatum/tests")))
   :long-description "
 An extensible chemical formula builder/editor with regulatory intelligence.")
 
+;; Register specific package symbols
+(register-system-packages "bordeaux-threads" '(:bt :bt2 :bordeaux-threads-2))
+(register-system-packages "closer-mop" '(:c2mop :c2cl :c2cl-user))
+
+#+or
+(defsystem "formulatum/libraries"
+  :depends-on ())
 
 (defsystem "formulatum/tests"
+  :depends-on ("rove")
   :components
   ((:module "tests"
-    :serial t
     :components
     ((:file "base")
      (:file "utils"))))
-  :depends-on ("rove")
   :perform (test-op (o c)
                     (unless (symbol-call :rove :run c)
                       (error "Tests failed"))))
 
-
 (defsystem "formulatum/docs"
   :depends-on ())
-
-#+nil
-(register-system-packages "bordeaux-threads" '(:bt :bt2 :bordeaux-threads-2))
-
-#+nil
-(register-system-packages "closer-mop" '(:c2mop :c2cl :c2cl-user))
