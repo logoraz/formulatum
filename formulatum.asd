@@ -6,54 +6,61 @@
   :depends-on ("bordeaux-threads"
                "lparallel"
                "closer-mop"
-               "mito"
+               "fast-generic-functions"
                "osicat"
+               "mito"
                "micros"
                #+sbcl
                "cl-cffi-gtk4"
                ;; Local Systems (aka libraries)
                )
-  ;; Map of System Hierarchy
-  :components
+  :components ;; Map of System
   ((:module "source"
-    :components
-    ((:module "utils"
-      :components
-      ((:file "files")
-       (:file "servers")
+    :components 
+    ((:module "utils" ;; Establish first our toolbox
+      :components 
+      ((:file "macros")
+       (:file "files")
+       (:file "strings")                               
        (:file "shell")
-       (:file "strings")))
-
+       (:file "servers")))
+     ;; Program Core Logic
      (:module "core"
       :depends-on ("utils")
-      :components
-      ((:file "database")))
-
+      :components ((:file "database")))
      ;; Main Program
      (:file "formulatum" :depends-on ("utils" "core"))))
-
+   ;; UI/X Frontends
    (:module "frontends"
-    :components
+    :components 
     (#+sbcl (:file "gtk4-tutorial"))))
-
   ;; Building (executables) & Testing
   :build-operation "program-op"
   :build-pathname "formulatum-preexe"
   :entry-point "formulatum:main"
   :in-order-to ((test-op (test-op "formulatum/tests")))
-  :long-description "
-An extensible chemical formula builder/editor with regulatory intelligence.")
+  :long-description "An extensible chemical formula builder/editor with 
+regulatory intelligence.")
 
 ;; Register specific package symbols
 (register-system-packages "bordeaux-threads" '(:bt :bt2 :bordeaux-threads-2))
 (register-system-packages "closer-mop" '(:c2mop :c2cl :c2cl-user))
 
-#+or
+
+(defsystem "formulatum/docs"
+  :depends-on ("formulatum" "3bmd" "colorize" "print-licenses")
+  :components
+  ((:module "docs"
+    :components
+    ((:file "formulatum-docs")))))
+
+
 (defsystem "formulatum/libraries"
   :depends-on ())
 
+
 (defsystem "formulatum/tests"
-  :depends-on ("rove")
+  :depends-on ("formulatum" "rove")
   :components
   ((:module "tests"
     :components
@@ -62,6 +69,3 @@ An extensible chemical formula builder/editor with regulatory intelligence.")
   :perform (test-op (o c)
                     (unless (symbol-call :rove :run c)
                       (error "Tests failed"))))
-
-(defsystem "formulatum/docs"
-  :depends-on ())
